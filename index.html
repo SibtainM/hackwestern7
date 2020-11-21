@@ -20,31 +20,32 @@
       <!-- Input textboxes-->
     <div id="searchField" class="searchField">
           <form class="firstName" autocomplete="on" onsubmit="return false">
-              <label for="firstName">First Name:</label>
-              <input id="firstName" type="text" placeholder="Fiona" name="firstName">
+              <label for="firstName" class = "label-text" >First Name:</label>
+              <input id="firstName" class = "input-text" type="text" placeholder="Fiona" name="firstName">
           </form>
 
           <form class="lastName" autocomplete="on" onsubmit="return false">
-              <label for="lastName">Last Name:</label>
-              <input id="lastName" type="text" placeholder="Baker" name="lastName">
+              <label for="lastName" class = "label-text" >Last Name:</label>
+              <input id="lastName" class = "input-text" type="text" placeholder="Baker" name="lastName">
           </form>
 
           <form class="studentID" autocomplete="on" onsubmit="return false">
-              <label for="studentID">Student ID:</label>
-              <input id="studentID" type="text" placeholder="1002752833" name="studentID">
+              <label for="studentID" class = "label-text" >Student ID:</label>
+              <input id="studentID" class = "input-text" type="text" placeholder="1002752833" name="studentID">
           </form>
 
           <form class="assessmentCode" autocomplete="on" onsubmit="return false">
-              <label for="assessmentCode">Assessment Code:</label>
-              <input id="assessmentCode" type="text" placeholder="ECO101 Midterm 2" name="assessmentCode">
+              <label for="assessmentCode" class = "label-text" >Assessment Code:</label>
+              <input id="assessmentCode" class = "input-text" type="text" placeholder="ECO101 Midterm 2" name="assessmentCode">
           </form>
 
       </div>
+
       <!--Start and Stop Buttons-->
-      <div class="button">
         <p>Assessment Session:</p>
-          <button id="start" type="submit" onclick="startSession()">Start</button>
-          <button id="stop" type="submit" onclick="stopSession()">Stop</button>
+      <div class="button">
+          <button id="start" class = "startbutton" type="submit" onclick="startSession()">Start</button>
+          <button id="stop" class = "stopbutton" type="submit" onclick="stopSession()">Stop</button>
       </div>
   </div>
 
