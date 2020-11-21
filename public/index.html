@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html>
 
-<!-- Head content here -->
 <head>
+	<title>SuperVisor</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="index.css">
 </head>
 
-<!-- Body content here -->
 <body>
-    <h1>Test</h1>
-    <h2>Testing p2</h2>
+    <div id="pageTitle">
+        <h1>SUPERvisor</h1>
+    </div>
+
+    <!-- Input textboxes-->
+	<div id="searchField" class="searchField">
+        <form class="firstName" autocomplete="on" onsubmit="return false">
+            <label for="firstName">My First Name:</label>
+            <input id="firstName" type="text" placeholder="Fiona" name="firstName">
+        </form>
+
+        <form class="lastName" autocomplete="on" onsubmit="return false">
+            <label for="lastName">My Last Name:</label>
+            <input id="lastName" type="text" placeholder="Baker" name="lastName">
+        </form>
+
+        <form class="studentID" autocomplete="on" onsubmit="return false">
+            <label for="studentID">My Student ID:</label>
+            <input id="studentID" type="text" placeholder="0123456789" name="studentID">
+        </form>
+
+    </div>
+    <!-- Choose your exam time-->
+    <div>
+    	<p>How long is your test?</p>
+        <form>
+  			<input type="radio" name="time" value="30 minutes">30 minutes<br>
+  			<input type="radio" name="time" value="1 hour">1 hour<br>
+  			<input type="radio" name="time" value="2 hours"> 2 hours
+		</form>
+	</div>
+    <!-- Start!-->
+    <div class="button">
+        <button id="start" type="submit">Start</button>
+    </div>
+
 </body>
 
 </html>
