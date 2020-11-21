@@ -1,1 +1,17 @@
 /*css content here*/
+body{
+	font-family: 'Nunito', sans-serif;
+	color: black;
+}
+
+
+.wrapper{
+	background-color: white;
+	width: 20rem;
+	padding: 2rem;
+	margin: 2rem auto;
+}
+
+#pageTitle{
+	text-align: center;
+}

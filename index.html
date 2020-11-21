@@ -2,51 +2,56 @@
 <html>
 
 <head>
-    <title>SuperVisor</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="index.css">
+  <title>SuperVisor</title>
+  <style>
+    body {min-width: 270px;}
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div id="pageTitle">
-        <h1>SuperVisor</h1>
-    </div>
+  <div class="wrapper">
+      <div id="pageTitle">
+          <h1>SuperVisor</h1>
+      </div>
 
-    <!-- Input textboxes-->
+      <!-- Input textboxes-->
     <div id="searchField" class="searchField">
-        <form class="firstName" autocomplete="on" onsubmit="return false">
-            <label for="firstName">My First Name:</label>
-            <input id="firstName" type="text" placeholder="Fiona" name="firstName">
-        </form>
+          <form class="firstName" autocomplete="on" onsubmit="return false">
+              <label for="firstName">First Name:</label>
+              <input id="firstName" type="text" placeholder="Fiona" name="firstName">
+          </form>
 
-        <form class="lastName" autocomplete="on" onsubmit="return false">
-            <label for="lastName">My Last Name:</label>
-            <input id="lastName" type="text" placeholder="Baker" name="lastName">
-        </form>
+          <form class="lastName" autocomplete="on" onsubmit="return false">
+              <label for="lastName">Last Name:</label>
+              <input id="lastName" type="text" placeholder="Baker" name="lastName">
+          </form>
 
-        <form class="studentID" autocomplete="on" onsubmit="return false">
-            <label for="studentID">My Student ID:</label>
-            <input id="studentID" type="text" placeholder="0123456789" name="studentID">
-        </form>
+          <form class="studentID" autocomplete="on" onsubmit="return false">
+              <label for="studentID">Student ID:</label>
+              <input id="studentID" type="text" placeholder="1002752833" name="studentID">
+          </form>
 
-    </div>
-    <!-- Choose your exam time-->
-    <div>
-        <p>How long is your test?</p>
-        <form>
-            <input type="radio" name="time" value="30 minutes">30 minutes<br>
-            <input type="radio" name="time" value="1 hour">1 hour<br>
-            <input type="radio" name="time" value="2 hours">2 hours
-        </form>
-    </div>
+          <form class="assessmentCode" autocomplete="on" onsubmit="return false">
+              <label for="assessmentCode">Assessment Code:</label>
+              <input id="assessmentCode" type="text" placeholder="ECO101 Midterm 2" name="assessmentCode">
+          </form>
 
-    <div class="button">
-        <button id="start" type="submit" onclick="buildPopupDom()">Start</button>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.1.1/jspdf.umd.min.js"></script>
-    <script src="front.js"></script>
+      </div>
+      <!--Start and Stop Buttons-->
+      <div class="button">
+        <p>Assessment Session:</p>
+          <button id="start" type="submit" onclick="startSession()">Start</button>
+          <button id="stop" type="submit" onclick="stopSession()">Stop</button>
+      </div>
+  </div>
 
 </body>
 
+
+
+
+    <script src='front.js'></script>
 </html>
