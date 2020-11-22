@@ -1,10 +1,11 @@
 {
   "name": "SuperVisor",
   "version": "1.0",
-  "description": "Reads your history, and shows the top ten pages you go to by typing the URL.",
+  "description": "Tracks student web activity during an active assessment session and creates a report for the instructor for review. User  must click to start, extension will read user history, and upon clicking stop button, extension ends session while showing report on all the pages URLs visited with a corresponding timestamp.",
   "permissions": [
     "history"
   ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "browser_action": {
     "default_popup": "index.html",
     "default_icon": "clock.png"
