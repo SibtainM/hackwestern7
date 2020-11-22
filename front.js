@@ -1,24 +1,56 @@
-const { jsPDF } = require("jspdf");
-// will automatically load the node version
-const pdf = new jsPDF();
+var today = new Date();
+var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+var y;
 
-var x = 0;
-var y = 60;
+var fname = "Empty";
+var fname = "Empty";
+var studentID = "Empty";
+var assessmentCode = "Empty";
 
+var startTime;
+var flag = false;
 
+function startSession() {
+    flag = true;
+    startTime = (new Date);  //Gets the start time value.
+    console.log(startTime);
 
-//***I dont think we need this section anymore***
-//call this function whenever we need to add a new entry from the browswer history.
-function pdfPopulator(history) {
+    fname = document.getElementById("firstName").value;
+    lname = document.getElementById("lastName").value;
+    studentID = document.getElementById("studentID").value;
+    assessmentCode = document.getElementById("assessmentCode").value;
 
-    //Copy in the data of the new web history entry onto the PDF 
+    console.log(fname);
 
-    //change the x and y coordinates for the next extry
-    x = x + 10;
+};
+
+function stopSession() {
+    flag = false;
+    stopTime = (new Date); //Gets the stop time value.
+
+    //export or download PDF file
     y = y + 10;
+    //pdf.text(stopTime, 10, y);
+    //pdf.save(fname.charAt(0) + lname + "_" + studentID + "_" + assessmentCode);
+
+    console.log(stopTime);
+
 }
 
+//New array to hold each static history information
+var history = []; // Create an array of arrays
 
+//Format: (title, url, lastVisitTime)
+//Populating each array element (pokemon) with specific name and description information
+history[0] = new Array ("Facebook", "", "Sun Nov 22 2020 03:05:30 GMT-0500 (Eastern Standard Time)");
+history[1] = new Array ();
+history[2] = new Array ();
+history[3] = new Array ();
+history[4] = new Array ();
+
+
+
+/*
 function createInitialPDF() {
 
     let fname = document.getElementById("firstName").value;
@@ -44,11 +76,8 @@ function createInitialPDF() {
     //***I dont think we need this section anymore***
     for (let index = 0; index < window.history.length; index++) {
         //pdfPopulator(window.history);
-
     }
-
 }
-
 
 var startTime;
 var flag = false;
@@ -72,10 +101,7 @@ function stopSession() {
     pdf.save(fname.charAt(0) + lname + "_" + studentID + "_" + assessmentCode);
 
     console.log(stopTime);
-
 }
-
-chrome.history.onVisited.addListener(recordHistory(HistoryItem));
 
 function recordHistory(historyItem) {
 
@@ -105,7 +131,6 @@ function recordHistory(historyItem) {
 
         //Does this save a new file everytime or does it replace the file?? might want to check on how pdf sacing works
         pdf.save(fname.charAt(0) + lname + "_" + studentID + "_" + assessmentCode);
-
     }
-
 };
+*/
