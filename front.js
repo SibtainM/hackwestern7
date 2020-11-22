@@ -1,9 +1,4 @@
-var today = new Date();
-var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-var y;
-
-var fname = "Empty";
-var fname = "Empty";
+var name = "Empty";
 var studentID = "Empty";
 var assessmentCode = "Empty";
 
@@ -13,14 +8,30 @@ var flag = false;
 function startSession() {
     flag = true;
     startTime = (new Date);  //Gets the start time value.
-    console.log(startTime);
 
-    fname = document.getElementById("firstName").value;
-    lname = document.getElementById("lastName").value;
+    name = document.getElementById("firstName").value + " " + document.getElementById("lastName").value;
     studentID = document.getElementById("studentID").value;
     assessmentCode = document.getElementById("assessmentCode").value;
 
-    console.log(fname);
+    console.log(name);
+    var nameElement = document.getElementById("stuName");
+    var stuName = document.createTextNode(name);
+    nameElement.appendChild(stuName);
+
+    console.log(studentID);
+    var idElement = document.getElementById("stuId");
+    var stuId = document.createTextNode(studentID);
+    idElement.appendChild(stuId);
+
+    console.log(assessmentCode);
+    var assessmentElement = document.getElementById("aCode");
+    var aCode = document.createTextNode(assessmentCode);
+    assessmentElement.appendChild(aCode);
+
+    console.log(startTime);
+    var startTimeElement = document.getElementById("startTime");
+    var staTime = document.createTextNode(startTime);
+    startTimeElement.appendChild(staTime);
 
 };
 
@@ -28,26 +39,60 @@ function stopSession() {
     flag = false;
     stopTime = (new Date); //Gets the stop time value.
 
-    //export or download PDF file
-    y = y + 10;
-    //pdf.text(stopTime, 10, y);
-    //pdf.save(fname.charAt(0) + lname + "_" + studentID + "_" + assessmentCode);
-
     console.log(stopTime);
+    var stopTimeElement = document.getElementById("stopTime");
+    var stoTime = document.createTextNode(stopTime);
+    stopTimeElement.appendChild(stoTime);
 
-}
+    //Printing Static Data
+    var mainDivElement = document.createElement("div");
+    var mainList = document.createElement("ul");
+    mainDivElement.appendChild(mainList);
+
+    var body = document.getElementById("results");
+    body.appendChild(mainDivElement);
+
+    //Function to create a pokemon card
+    for (let i = 0; i < 6; i++) {
+
+        //Create list item
+        var mainListItem = document.createElement("li");
+        //Create div element
+        var historyDiv = document.createElement("div");
+
+        //Create and add specific values into element objects
+        var title = document.createElement("p");
+        title.append(history[i][0]);
+        var url = document.createElement("p");
+        url.append(history[i][1]);
+        var lastVisitTime = document.createElement("p");
+        lastVisitTime.append(history[i][2]);
+
+        //Add elements to pokemon div element
+        historyDiv.appendChild(title);
+        historyDiv.appendChild(url);
+        historyDiv.appendChild(lastVisitTime);
+
+        //Add elements to pokemon list element
+        mainListItem.appendChild(historyDiv);
+
+        //Add main list item to the main list
+        mainList.appendChild(mainListItem);
+
+    }
+};
 
 //New array to hold each static history information
 var history = []; // Create an array of arrays
 
 //Format: (title, url, lastVisitTime)
-//Populating each array element (pokemon) with specific name and description information
-history[0] = new Array ("Facebook", "", "Sun Nov 22 2020 03:05:30 GMT-0500 (Eastern Standard Time)");
-history[1] = new Array ();
-history[2] = new Array ();
-history[3] = new Array ();
-history[4] = new Array ();
-
+//Populating each stsatic array element with specific title, link and date information
+history[0] = new Array("why is marginal benefit downward sloping - Google Search", "www.google.com", "Sun Nov 22 2020 17:05:30 GMT-0500 (Eastern Standard Time)");
+history[1] = new Array("How does marginal utility and marginal benefit differ?", "www.investopedia.com", "Sun Nov 22 2020 17:07:04 GMT-0500 (Eastern Standard Time)");
+history[2] = new Array("Simply put: Marginal cost/benefit | The Incidental Economist", "theincidentaleconomist.com", "Sun Nov 22 2020 17:14:28 GMT-0500 (Eastern Standard Time)");
+history[3] = new Array("Question: When A Demand Curve Is Linear, The Elasticity Is T... | Chegg.com", "www.chegg.com", "Sun Nov 22 2020 17:22:34 GMT-0500 (Eastern Standard Time)");
+history[4] = new Array("Marginal Costs & Benefits | The Environmental Literacy Council", "enviroliteracy.org", "Sun Nov 22 2020 17:43:39 GMT-0500 (Eastern Standard Time)");
+history[5] = new Array("Messenger", "www.messenger.com", "Sun Nov 22 2020 18:03:49 GMT-0500 (Eastern Standard Time)");
 
 
 /*
